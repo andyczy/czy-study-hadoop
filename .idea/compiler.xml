@@ -11,9 +11,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="czy-study-hadoop" target="1.5" />
-      <module name="hadoop-hdfs" target="1.5" />
-      <module name="hadoop-mapreduce" target="1.5" />
+      <module name="czy-study-hadoop" target="1.8" />
+      <module name="hadoop-hdfs" target="1.8" />
+      <module name="hadoop-mapreduce" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
