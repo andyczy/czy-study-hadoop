@@ -1,7 +1,6 @@
-    
-————————————————————————————————————— 
-### Hadoop之旅、脚踏实地（博客专栏链接：http://blog.csdn.net/column/details/15446.html）       
-————————————————————————————————————— 
+
+### [Hadoop之旅、脚踏实地—chenzhengyou](http://blog.csdn.net/column/details/15446.html)      
+******************
 
 
 
