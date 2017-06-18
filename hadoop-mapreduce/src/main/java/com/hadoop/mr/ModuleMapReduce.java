@@ -108,14 +108,14 @@ public class ModuleMapReduce extends Configured implements Tool {
 		job.setMapOutputValueClass(IntWritable.class);
 		
 //****************************Shuffle*********************************
-		// 1) partitioner
-//		job.setPartitionerClass(cls);
-		// 2) sort
-//		job.setSortComparatorClass(cls);
-		// 3) optional,combiner
-//		job.setCombinerClass(cls);
-		// 4) group
-//		job.setGroupingComparatorClass(cls);
+		// 1) partitioner（分区）
+//			job.setPartitionerClass(cls);
+		// 2) sort（排序）
+//			job.setSortComparatorClass(cls);
+		// 3) optional,combiner（）
+//			job.setCombinerClass(cls);
+		// 4) group（分组）
+//			job.setGroupingComparatorClass(cls);
 		
 //****************************Shuffle*********************************
 
@@ -147,7 +147,7 @@ public class ModuleMapReduce extends Configured implements Tool {
 		// 1: get confifuration
 		Configuration configuration = new Configuration();
 		
-		//set compress
+		//set compress （压缩——>也可以在配置文件里配置）
 //		configuration.set("mapreduce.map.output.compress", "true");
 //		configuration.set("mapreduce.map.output.compress.codec", "org.apache.hadoop.io.compress.SnappyCodec");
 
