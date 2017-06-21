@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="hadoop-hdfs" />
         <module name="hadoop-mapreduce" />
+        <module name="hive" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="czy-study-hadoop" target="1.8" />
       <module name="hadoop-hdfs" target="1.8" />
       <module name="hadoop-mapreduce" target="1.8" />
+      <module name="hive" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

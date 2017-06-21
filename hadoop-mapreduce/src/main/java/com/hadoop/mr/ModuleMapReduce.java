@@ -125,7 +125,7 @@ public class ModuleMapReduce extends Configured implements Tool {
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(IntWritable.class);
 		
-		// set reduce number
+		// set reduce number  设置reduce的个数（默认是1）、可在配置文件配置
 //		job.setNumReduceTasks(2);
 		
 		
