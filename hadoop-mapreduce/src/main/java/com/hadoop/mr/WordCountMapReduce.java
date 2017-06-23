@@ -72,17 +72,13 @@ public class WordCountMapReduce extends Configured implements Tool{
                 // output  ——> 上下文操作
                 context.write(mapOutputKey, mapOuputValue);
             }
-
         }
-
     }
 
 
 
     /**
      * step 2: Reduce Class
-     *
-     *
      * reduce 输入 ——> reduce 输出
      * public class Reducer<KEYIN,VALUEIN,KEYOUT,VALUEOUT>
      */
@@ -132,7 +128,6 @@ public class WordCountMapReduce extends Configured implements Tool{
 
         // run jar
         job.setJarByClass(this.getClass());
-
 
         // 3: set job
         // input  -> map  -> reduce -> output
