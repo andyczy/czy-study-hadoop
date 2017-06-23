@@ -21,4 +21,5 @@
 ******************         
 [Apache Hadoop](http://hadoop.apache.org/)      
 [Cloudera](https://www.cloudera.com/)       
-[Hive](https://hive.apache.org/)
+[Hive](https://hive.apache.org/)        
+[parquet](http://parquet.apache.org/)
