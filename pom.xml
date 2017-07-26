@@ -12,6 +12,7 @@
         <module>hadoop-hdfs</module>
         <module>hadoop-mapreduce</module>
         <module>hive</module>
+        <module>project-track</module>
     </modules>
 
     <properties>

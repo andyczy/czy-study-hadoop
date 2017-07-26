@@ -9,6 +9,7 @@
         <module name="hadoop-hdfs" />
         <module name="hadoop-mapreduce" />
         <module name="hive" />
+        <module name="project-track" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,6 +17,7 @@
       <module name="hadoop-hdfs" target="1.8" />
       <module name="hadoop-mapreduce" target="1.8" />
       <module name="hive" target="1.8" />
+      <module name="project-track" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

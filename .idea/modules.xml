@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/hadoop-hdfs/hadoop-hdfs.iml" filepath="$PROJECT_DIR$/hadoop-hdfs/hadoop-hdfs.iml" />
       <module fileurl="file://$PROJECT_DIR$/hadoop-mapreduce/hadoop-mapreduce.iml" filepath="$PROJECT_DIR$/hadoop-mapreduce/hadoop-mapreduce.iml" />
       <module fileurl="file://$PROJECT_DIR$/hive/hive.iml" filepath="$PROJECT_DIR$/hive/hive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project-track/project-track.iml" filepath="$PROJECT_DIR$/project-track/project-track.iml" />
     </modules>
   </component>
 </project>
