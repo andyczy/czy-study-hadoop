@@ -1,16 +1,17 @@
 package com.hadoop.hdfs.hdfs_api;
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.*;
-import org.apache.hadoop.fs.permission.FsPermission;
+import org.apache.hadoop.fs.FSDataInputStream;
+import org.apache.hadoop.fs.FSDataOutputStream;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IOUtils;
-import org.apache.hadoop.util.Progressable;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.URI;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @auther 陈郑游
@@ -115,6 +116,7 @@ public class HdfsClient {
 
     // main
     public static void main(String[] args) throws Exception {
+
         // filename
         String filename = "/chenzy/mapreduce/wordcount/input/wc.input";
         read(filename);
