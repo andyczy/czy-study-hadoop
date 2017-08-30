@@ -20,18 +20,18 @@
 
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://czy-1:8888</value>
+        <value>hdfs://chenzy-1:9000</value>
     </property>
-	
-	<property>
+
+    <property>
         <name>hadoop.tmp.dir</name>
-        <value>/usr/local/chenzhengyou/hadoop/standalone/hadoop-2.5.0/data/tmp</value>
+        <value>/usr/local/chenzy/hadoop/pseudo-distributed-mode/hadoop-2.5.0/data/tmp</value>
     </property>
-	
-	<!--垃圾回收箱的时间-->
-	<property>
-		<name>fs.trash.interval</name>
-		<value>640800</value>
-	</property>
+
+    <!--垃圾回收箱的时间-->
+    <property>
+        <name>fs.trash.interval</name>
+        <value>640800</value>
+    </property>
 	
 </configuration>

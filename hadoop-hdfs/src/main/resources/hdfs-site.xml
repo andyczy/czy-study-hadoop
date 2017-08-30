@@ -17,8 +17,17 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-	<property>
+    <property>
         <name>dfs.replication</name>
         <value>1</value>
+    </property>
+    <property>
+        <name>dfs.namenode.secondary.http-address</name>
+        <value>chenzy-1:50090</value>
+    </property>
+    <!--权限-->
+    <property>
+        <name>dfs.permissions</name>
+        <value>false</value>
     </property>
 </configuration>

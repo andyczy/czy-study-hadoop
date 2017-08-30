@@ -1,14 +1,16 @@
 package com.hadoop.hdfs;
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.FSDataInputStream;
-import org.apache.hadoop.fs.FSDataOutputStream;
-import org.apache.hadoop.fs.FileSystem;
-import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.fs.*;
+import org.apache.hadoop.fs.permission.FsPermission;
 import org.apache.hadoop.io.IOUtils;
+import org.apache.hadoop.util.Progressable;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.URI;
 
 /**
  * @auther 陈郑游
@@ -47,7 +49,7 @@ public class HdfsClient {
 
     /**
      * Read Data
-     * hadoop shell读取文件：bin/hdfs dfs -text /chenzhengyou/mapreduce/wordcount/input/word.input
+     * hadoop shell读取文件：bin/hdfs dfs -text /chenzy/mapreduce/wordcount/input/word.input
      *
      * @param fileName
      * @throws Exception
@@ -77,12 +79,13 @@ public class HdfsClient {
 
     /**
      * write file
-     * SHELL ：bin/hdfs dfs -put -p wcinput/wc.input /chenzhengyou/mapreduce/wordcount/input
+     * SHELL ：bin/hdfs dfs -put -p wcinput/wc.input /chenzy/mapreduce/wordcount/input
      * 问题：
      *      1、Permission denied: user=administrator, access=WRITE, inode="/":root:supergroup:drwxr-xr-x
      *          解决：在hdfs的配置文件中，将dfs.permissions修改为false
      *      2、org.apache.Hadoop.dfs.SafeModeException: Cannot ... Name node is in safe mode
-     *          解决：说明Hadoop的NameNode处在安全模式下。 解除：bin/hadoop dfsadmin -safemode leave
+     *          解决：说明Hadoop的NameNode处在安全模式下。
+     *          解除：bin/hadoop dfsadmin -safemode leave
      * */
     public static void write(String putFileName, String filename) throws Exception {
         // get filesystem
@@ -113,15 +116,16 @@ public class HdfsClient {
     // main
     public static void main(String[] args) throws Exception {
         // filename
-        String filename = "/chenzhengyou/mapreduce/wordcount/input/putwc.input";
+        String filename = "/chenzy/mapreduce/wordcount/input/wc.input";
         read(filename);
 
 
-        // write path "E:"+File.separatorChar+"nword.input";
-        String putFileName = "/chenzhengyou/mapreduce/wordcount/input/idea.input";
-        // 本地E盘
-        String file= "E:"+File.separatorChar+"nword.input";;
+        // write
+        String putFileName = "/chenzy/mapreduce/wordcount/input/idea.input";
+        // 本地E盘  "E:"+File.separatorChar+"nword.input";
+        String file= "E:"+File.separatorChar+"nword.config";
         write(putFileName,file);
+
     }
 
 
