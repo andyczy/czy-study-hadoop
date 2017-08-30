@@ -1,4 +1,4 @@
-package com.hadoop.hdfs;
+package com.hadoop.hdfs.hdfs_api;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.BufferedFSInputStream;
@@ -16,7 +16,7 @@ import java.io.OutputStreamWriter;
  * @CSDN:http://blog.csdn.net/javawebrookie
  * @GITHUB:https://github.com/AndyCZY
  */
-public class HdfsTest {
+public class HdfsCreateTest {
 
 
     public static void main(String[] args) throws Exception{

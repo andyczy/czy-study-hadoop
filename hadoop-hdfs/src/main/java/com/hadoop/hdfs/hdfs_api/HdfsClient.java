@@ -1,4 +1,4 @@
-package com.hadoop.hdfs;
+package com.hadoop.hdfs.hdfs_api;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.*;
