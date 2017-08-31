@@ -13,12 +13,16 @@
         <module>hadoop-mapreduce</module>
         <module>hive</module>
         <module>project-track</module>
+        <module>project-dataapi</module>
+        <module>project-transforer</module>
+        <module>hbase</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <hadoop.version>2.5.0</hadoop.version>
         <hive.version>0.13.1</hive.version>
+        <hbase.version>0.98.6-hadoop2</hbase.version>
         <!--junit-->
         <junit.version>4.12</junit.version>
     </properties>
@@ -57,6 +61,14 @@
             <artifactId>hive-exec</artifactId>
             <version>${hive.version}</version>
         </dependency>
+
+        <!-- hbase-client -->
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-client</artifactId>
+            <version>${hbase.version}</version>
+        </dependency>
+
     </dependencies>
 
 

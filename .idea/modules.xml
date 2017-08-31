@@ -5,8 +5,11 @@
       <module fileurl="file://$PROJECT_DIR$/czy-study-hadoop.iml" filepath="$PROJECT_DIR$/czy-study-hadoop.iml" />
       <module fileurl="file://$PROJECT_DIR$/hadoop-hdfs/hadoop-hdfs.iml" filepath="$PROJECT_DIR$/hadoop-hdfs/hadoop-hdfs.iml" />
       <module fileurl="file://$PROJECT_DIR$/hadoop-mapreduce/hadoop-mapreduce.iml" filepath="$PROJECT_DIR$/hadoop-mapreduce/hadoop-mapreduce.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hbase/hbase.iml" filepath="$PROJECT_DIR$/hbase/hbase.iml" />
       <module fileurl="file://$PROJECT_DIR$/hive/hive.iml" filepath="$PROJECT_DIR$/hive/hive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project-dataapi/project-dataapi.iml" filepath="$PROJECT_DIR$/project-dataapi/project-dataapi.iml" />
       <module fileurl="file://$PROJECT_DIR$/project-track/project-track.iml" filepath="$PROJECT_DIR$/project-track/project-track.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project-transforer/project-transforer.iml" filepath="$PROJECT_DIR$/project-transforer/project-transforer.iml" />
     </modules>
   </component>
 </project>

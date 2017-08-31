@@ -8,16 +8,22 @@
         <outputRelativeToContentRoot value="true" />
         <module name="hadoop-hdfs" />
         <module name="hadoop-mapreduce" />
+        <module name="hbase" />
         <module name="hive" />
+        <module name="project-dataapi" />
         <module name="project-track" />
+        <module name="project-transforer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="czy-study-hadoop" target="1.8" />
       <module name="hadoop-hdfs" target="1.8" />
       <module name="hadoop-mapreduce" target="1.8" />
+      <module name="hbase" target="1.8" />
       <module name="hive" target="1.8" />
+      <module name="project-dataapi" target="1.8" />
       <module name="project-track" target="1.8" />
+      <module name="project-transforer" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
