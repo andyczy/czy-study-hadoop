@@ -1,7 +1,6 @@
 package com.hadoop.hdfs.hdfs_api;
 
-import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.BufferedFSInputStream;
+import com.hadoop.hdfs.common.GetFileSystemClass;
 import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
@@ -28,28 +27,11 @@ public class HdfsCreateTest {
 
 
 
-    /**
-     * Get FileSystem (得到系统文件)
-     *
-     * @return
-     * @throws Exception
-     */
-    public static FileSystem getFileSystem() throws Exception {
-        Configuration configuration = new Configuration();
-        configuration.set("fd.defaultFS","hdfs://chenzy-1:9000");
-        // get filesystem
-        FileSystem fileSystem = FileSystem.get(configuration);
-
-        System.out.println(fileSystem);
-        return fileSystem;
-    }
-
-
 
     //指定绝对路径Absolute path
     private static void absolutePath() throws Exception{
         // get filesystem
-        FileSystem fileSystem = getFileSystem();
+        FileSystem fileSystem = GetFileSystemClass.getFileSystem();
         boolean b = fileSystem.createNewFile(new Path("/chenzy/mapreduce/wordcount/input/test.txt"));
         System.out.println(b ? "成功":"失败");
         fileSystem.close();
@@ -60,7 +42,7 @@ public class HdfsCreateTest {
     //指定相对路径relative path   路径：/user/Administrator/文件名
     private static void relativePath() throws Exception{
         // get filesystem
-        FileSystem fileSystem = getFileSystem();
+        FileSystem fileSystem = GetFileSystemClass.getFileSystem();
         boolean b = fileSystem.createNewFile(new Path("relative.txt"));
         System.out.println(b);
         fileSystem.close();
@@ -70,7 +52,7 @@ public class HdfsCreateTest {
     //追加内容
     private static void appendContent() throws Exception{
         // get filesystem
-        FileSystem fileSystem = getFileSystem();
+        FileSystem fileSystem = GetFileSystemClass.getFileSystem();
 
         Path path = new Path("/chenzy/mapreduce/wordcount/input/test.txt");
         FSDataOutputStream append = fileSystem.append(path);
@@ -83,7 +65,7 @@ public class HdfsCreateTest {
     //添加内容
     private static void bufferedContent() throws Exception{
         // get filesystem
-        FileSystem fileSystem = getFileSystem();
+        FileSystem fileSystem = GetFileSystemClass.getFileSystem();
 
         Path path = new Path("/chenzy/mapreduce/wordcount/input/test.txt");
         FSDataOutputStream append = fileSystem.append(path);

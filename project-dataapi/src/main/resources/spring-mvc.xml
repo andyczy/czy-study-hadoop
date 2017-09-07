@@ -29,7 +29,7 @@
     <!-- 添加静态资源访问 -->
     <mvc:resources location="/analyse/" mapping="/analyse/**"/>
     <mvc:resources location="/js/" mapping="/js/**"/>
-    <!--<mvc:resources location="/" mapping="/*.html"/>-->
+    <mvc:resources location="/" mapping="/*.html"/>
 
 
 </beans>

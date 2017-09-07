@@ -23,7 +23,7 @@ public class AnalyticsEngineSDK {
 
 
     // 请求url的主体部分
-    public static final String accessUrl = "http://192.168.100.120/BfImg.gif";
+    public static final String accessUrl = "http://192.168.92.11/Img.gif";
     private static final String platformName = "java_server";
     private static final String sdkName = "jdk";
     private static final String version = "1";
