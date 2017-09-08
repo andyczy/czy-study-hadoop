@@ -8,7 +8,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>project-dataapi</artifactId>
     <packaging>war</packaging>
-    <name>project-dataapi Maven Webapp</name>
+    <name>project-dataapi-8080</name>
     <url>http://maven.apache.org</url>
 
 

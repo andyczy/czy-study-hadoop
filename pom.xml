@@ -16,6 +16,7 @@
         <module>project-dataapi</module>
         <module>project-transforer</module>
         <module>hbase</module>
+        <module>project-etl</module>
     </modules>
 
     <properties>

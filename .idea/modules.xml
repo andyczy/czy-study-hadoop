@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/hbase/hbase.iml" filepath="$PROJECT_DIR$/hbase/hbase.iml" />
       <module fileurl="file://$PROJECT_DIR$/hive/hive.iml" filepath="$PROJECT_DIR$/hive/hive.iml" />
       <module fileurl="file://$PROJECT_DIR$/project-dataapi/project-dataapi.iml" filepath="$PROJECT_DIR$/project-dataapi/project-dataapi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project-etl/project-etl.iml" filepath="$PROJECT_DIR$/project-etl/project-etl.iml" />
       <module fileurl="file://$PROJECT_DIR$/project-track/project-track.iml" filepath="$PROJECT_DIR$/project-track/project-track.iml" />
       <module fileurl="file://$PROJECT_DIR$/project-transforer/project-transforer.iml" filepath="$PROJECT_DIR$/project-transforer/project-transforer.iml" />
     </modules>

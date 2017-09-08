@@ -11,6 +11,7 @@
         <module name="hbase" />
         <module name="hive" />
         <module name="project-dataapi" />
+        <module name="project-etl" />
         <module name="project-track" />
         <module name="project-transforer" />
       </profile>
@@ -22,6 +23,7 @@
       <module name="hbase" target="1.8" />
       <module name="hive" target="1.8" />
       <module name="project-dataapi" target="1.8" />
+      <module name="project-etl" target="1.8" />
       <module name="project-track" target="1.8" />
       <module name="project-transforer" target="1.8" />
     </bytecodeTargetLevel>
