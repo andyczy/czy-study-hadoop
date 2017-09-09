@@ -24,11 +24,6 @@ import java.util.List;
  * @GitBook地址：https://www.gitbook.com/@chenzhengyou
  */
 public class HdfsClient {
-
-
-
-
-
     /**
      * Read Data
      * hadoop shell读取文件：bin/hdfs dfs -text /chenzy/mapreduce/wordcount/input/word.input
@@ -37,7 +32,6 @@ public class HdfsClient {
      * @throws Exception
      */
     public static void read(String fileName) throws Exception {
-
         // get filesystem
         FileSystem fileSystem = GetFileSystemClass.getFileSystemDefautl();
 

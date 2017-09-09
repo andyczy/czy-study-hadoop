@@ -17,6 +17,7 @@
         <module>project-transforer</module>
         <module>hbase</module>
         <module>project-etl</module>
+        <module>project-api</module>
     </modules>
 
     <properties>

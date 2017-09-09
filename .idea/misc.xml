@@ -39,6 +39,7 @@
     </properties>
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/project-api" />
     <file type="web" url="file://$PROJECT_DIR$/project-dataapi" />
   </component>
   <component name="MarkdownProjectSettings">

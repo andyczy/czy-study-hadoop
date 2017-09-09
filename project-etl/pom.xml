@@ -12,11 +12,34 @@
     <artifactId>project-etl</artifactId>
 
     <dependencies>
+        <!--userAgent解析需要-->
         <dependency>
             <groupId>cz.mallat.uasparser</groupId>
             <artifactId>uasparser</artifactId>
             <version>0.6.1</version>
         </dependency>
+
+
+        <!-- hadoop start -->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+        <!-- hadoop end -->
+
+        <!-- hbase start -->
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-server</artifactId>
+            <version>0.98.6-hadoop2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-client</artifactId>
+            <version>0.98.6-hadoop2</version>
+        </dependency>
+        <!-- hbase end -->
     </dependencies>
 
 

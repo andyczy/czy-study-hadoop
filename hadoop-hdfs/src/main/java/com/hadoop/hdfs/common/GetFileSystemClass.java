@@ -40,7 +40,7 @@ public class GetFileSystemClass {
      */
     public static FileSystem getFileSystemDefautl() throws Exception {
         // 获取配置文件：core-site.xml,core-defautl.xml,hdfs-site.xml,hdfs-default.xml
-        Configuration conf = new Configuration();
+        Configuration conf =  new Configuration();
 
         //解决:解决方法很简单，配置环境变量，不想重启电脑可以在程序里加上
         System.setProperty("hadoop.home.dir", "F:\\ApplicationToolkit\\hadoopWinutils\\hadoop-common-2.2.0-bin-master");

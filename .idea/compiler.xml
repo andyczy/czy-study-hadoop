@@ -10,6 +10,7 @@
         <module name="hadoop-mapreduce" />
         <module name="hbase" />
         <module name="hive" />
+        <module name="project-api" />
         <module name="project-dataapi" />
         <module name="project-etl" />
         <module name="project-track" />
@@ -22,6 +23,7 @@
       <module name="hadoop-mapreduce" target="1.8" />
       <module name="hbase" target="1.8" />
       <module name="hive" target="1.8" />
+      <module name="project-api" target="1.8" />
       <module name="project-dataapi" target="1.8" />
       <module name="project-etl" target="1.8" />
       <module name="project-track" target="1.8" />
