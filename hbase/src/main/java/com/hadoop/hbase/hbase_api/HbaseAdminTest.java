@@ -23,8 +23,8 @@ public class HbaseAdminTest {
         Configuration conf = HbaseUtils.getHBaseConfiguration();
         HBaseAdmin hBaseAdmin = new HBaseAdmin(conf);
         try {
-            testCreateTable(hBaseAdmin);
-            //testGetTableDescribe(hBaseAdmin);
+            //testCreateTable(hBaseAdmin);
+            testGetTableDescribe(hBaseAdmin);
             //testDeleteTable(hBaseAdmin);
         } finally {
             hBaseAdmin.close();
@@ -34,7 +34,7 @@ public class HbaseAdminTest {
 
     /**
      * 测试创建table
-     *
+     * create 'users','f'
      * @throws IOException
      */
     static void testCreateTable(HBaseAdmin hbAdmin) throws IOException {
@@ -55,7 +55,12 @@ public class HbaseAdminTest {
 
     /**
      * 测试获取表信息
-     *
+     * 'users', {TABLE_ATTRIBUTES => {MAX_FILESIZE => '10000'},
+     *          {NAME => 'f', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY =>
+     *          'false', KEEP_DELETED_CELLS => 'false', DATA_BLOCK_ENCODING =>
+     *          'NONE', COMPRESSION => 'NONE', TTL => 'FOREVER',
+     *           MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE => '65536',
+     *           REPLICATION_SCOPE => '0'}
      * @param hbAdmin
      * @throws IOException
      */

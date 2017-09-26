@@ -1,4 +1,4 @@
-package czy.hadoop.etl.ip;
+package czy.hadoop.utils.ip;
 
 
 /**

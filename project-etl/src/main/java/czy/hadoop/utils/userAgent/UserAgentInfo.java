@@ -1,24 +1,23 @@
-package czy.hadoop.etl.userAgent;
+package czy.hadoop.utils.userAgent;
 
 /**
  * @Auther 陈郑游
- * @Data 2017/9/8 0008
+ * @Data 2017/9/26 0026
  * @Description:
  * @CSDN:http://blog.csdn.net/javawebrookie
  * @GITHUB:https://github.com/AndyCZY
  */
-public class UserAgentInfo_m {
+public class UserAgentInfo {
 
     /**
      * 内部解析后的浏览器信息model对象
      *
      * @author gerry
      */
-
-    private String browserName;     // 浏览器名称
-    private String browserVersion;  // 浏览器版本号
-    private String osName;          // 操作系统名称
-    private String osVersion;       // 操作系统版本号
+    private String browserName; // 浏览器名称
+    private String browserVersion; // 浏览器版本号
+    private String osName; // 操作系统名称
+    private String osVersion; // 操作系统版本号
 
     public String getBrowserName() {
         return browserName;
@@ -54,8 +53,7 @@ public class UserAgentInfo_m {
 
     @Override
     public String toString() {
-        return "UserAgentInfo_m [browserName=" + browserName + ", browserVersion=" + browserVersion + ", osName="
+        return "UserAgentInfo [browserName=" + browserName + ", browserVersion=" + browserVersion + ", osName="
                 + osName + ", osVersion=" + osVersion + "]";
     }
-
 }

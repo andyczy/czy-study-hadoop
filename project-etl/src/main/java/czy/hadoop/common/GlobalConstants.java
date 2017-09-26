@@ -1,4 +1,4 @@
-package czy.hadoop.etl.common;
+package czy.hadoop.common;
 
 /**
  * @Auther 陈郑游

@@ -1,4 +1,4 @@
-package czy.hadoop.etl.log;
+package czy.hadoop.utils.util;
 
 import java.io.File;
 import java.io.FileInputStream;

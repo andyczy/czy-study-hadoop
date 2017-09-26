@@ -1,4 +1,4 @@
-package czy.hadoop.etl.log;
+package czy.hadoop.utils.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,21 +10,20 @@ import java.util.regex.Pattern;
 import org.apache.commons.lang.StringUtils;
 
 
- /**
+/**
  * @Auther 陈郑游
  * @Data 2017/9/8 0008
- * @Description:  时间控制工具类
+ * @Description: 时间控制工具类
  * @CSDN:http://blog.csdn.net/javawebrookie
  * @GITHUB:https://github.com/AndyCZY
  */
 public class TimeUtil {
 
-
     public static final String DATE_FORMAT = "yyyy-MM-dd";
 
     /**
      * 获取昨日的日期格式字符串数据
-     * 
+     *
      * @return
      */
     public static String getYesterday() {
@@ -33,7 +32,7 @@ public class TimeUtil {
 
     /**
      * 获取对应格式的时间字符串
-     * 
+     *
      * @param pattern
      * @return
      */
@@ -46,14 +45,14 @@ public class TimeUtil {
 
     /**
      * 判断输入的参数是否是一个有效的时间格式数据
-     * 
+     *
      * @param input
      * @return
      */
     public static boolean isValidateRunningDate(String input) {
         Matcher matcher = null;
         boolean result = false;
-        String regex = "[0-9]{4}-[0-9]{2}-[0-9]{2}";
+        String regex = "[0-9]{4}-[0-9]{2}-[0-9]{2}";  //0-9 四位
         if (input != null && !input.isEmpty()) {
             Pattern pattern = Pattern.compile(regex);
             matcher = pattern.matcher(input);
@@ -66,7 +65,6 @@ public class TimeUtil {
 
     /**
      * 将yyyy-MM-dd格式的时间字符串转换为时间戳
-     * 
      * @param input
      * @return
      */
@@ -75,8 +73,18 @@ public class TimeUtil {
     }
 
     /**
+     * 将时间戳转换为yyyy-MM-dd格式的时间字符串
+     * @param input
+     * @return
+     */
+    public static String parseLong2String(long input) {
+        return parseLong2String(input, DATE_FORMAT);
+    }
+
+
+    /**
      * 将指定格式的时间字符串转换为时间戳
-     * 
+     *
      * @param input
      * @param pattern
      * @return
@@ -92,17 +100,8 @@ public class TimeUtil {
     }
 
     /**
-     * 将时间戳转换为yyyy-MM-dd格式的时间字符串
-     * @param input
-     * @return
-     */
-    public static String parseLong2String(long input) {
-        return parseLong2String(input, DATE_FORMAT);
-    }
-
-    /**
      * 将时间戳转换为指定格式的字符串
-     * 
+     *
      * @param input
      * @param pattern
      * @return
@@ -115,7 +114,7 @@ public class TimeUtil {
 
     /**
      * 将nginx服务器时间转换为时间戳，如果说解析失败，返回-1
-     * 
+     *
      * @param input
      * @return
      */
@@ -126,9 +125,8 @@ public class TimeUtil {
 
     /**
      * 将nginx服务器时间转换为date对象。如果解析失败，返回null
-     * 
-     * @param input
-     *            格式: 1449410796.976
+     *
+     * @param input 格式: 1449410796.976
      * @return
      */
     public static Date parseNginxServerTime2Date(String input) {
