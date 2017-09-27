@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+	<property>
+		<name>hbase.rootdir</name>
+		<value>hdfs://chenzy-1:9000/hbase</value>
+	</property>
+
+	<property>
+		<name>hbase.cluster.distributed</name>
+		<value>true</value>
+	</property>
+
+	<property>
+		<name>hbase.tmp.dir</name>
+		<value>/usr/local/chenzy/hadoop/cdh/hbase-0.98.6-cdh5.3.6/hbase/tmp</value>
+	</property>
+</configuration>

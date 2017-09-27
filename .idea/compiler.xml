@@ -15,6 +15,7 @@
         <module name="project-etl" />
         <module name="project-track" />
         <module name="project-transforer" />
+        <module name="project-transformer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -28,6 +29,7 @@
       <module name="project-etl" target="1.8" />
       <module name="project-track" target="1.8" />
       <module name="project-transforer" target="1.8" />
+      <module name="project-transformer" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

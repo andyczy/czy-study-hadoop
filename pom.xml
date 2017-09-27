@@ -14,7 +14,7 @@
         <module>hive</module>
         <module>project-track</module>
         <module>project-dataapi</module>
-        <module>project-transforer</module>
+        <module>project-transformer</module>
         <module>hbase</module>
         <module>project-etl</module>
         <module>project-api</module>
