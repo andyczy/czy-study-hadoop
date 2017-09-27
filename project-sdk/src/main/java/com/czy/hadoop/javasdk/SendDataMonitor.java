@@ -1,4 +1,4 @@
-package com.czy.hadoop.project.javasdk;
+package com.czy.hadoop.javasdk;
 
 import java.io.BufferedReader;
 import java.io.IOException;

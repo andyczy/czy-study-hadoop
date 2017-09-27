@@ -29,7 +29,6 @@ public class UserAgent_Util {
 	/**
 	 * 解析浏览器的user agent字符串，返回UserAgentInfo对象。<br/>
 	 * 如果user agent为空，返回null。如果解析失败，也直接返回null。
-	 * 
 	 * @param userAgent 要解析的user agent字符串
 	 * @return 返回具体的值
 	 */

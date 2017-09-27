@@ -18,6 +18,7 @@
         <module>hbase</module>
         <module>project-etl</module>
         <module>project-api</module>
+        <module>project-sdk</module>
     </modules>
 
     <properties>

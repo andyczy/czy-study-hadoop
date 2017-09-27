@@ -1,6 +1,6 @@
-package com.czy.hadoop.project.javasdk.javasdk_test;
+package com.czy.hadoop.javasdk.test;
 
-import com.czy.hadoop.project.javasdk.AnalyticsEngineSDK;
+import com.czy.hadoop.javasdk.AnalyticsEngineSDK;
 
 /**
  * @Auther 陈郑游
@@ -10,6 +10,8 @@ import com.czy.hadoop.project.javasdk.AnalyticsEngineSDK;
  */
 public class JavaSdk_test {
 
+    // 启动 nginx   ----------   [root@chenzy-1 sbin]# ./nginx &
+    // 启动 flume   ----------
     public static void main(String[] args) {
         AnalyticsEngineSDK.onChargeSuccess("orderid123", "gerryliu123");
         AnalyticsEngineSDK.onChargeRefund("orderid456", "gerryliu456");

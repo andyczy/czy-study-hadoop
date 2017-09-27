@@ -1,4 +1,4 @@
-package com.czy.hadoop.project.javasdk;
+package com.czy.hadoop.javasdk;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
