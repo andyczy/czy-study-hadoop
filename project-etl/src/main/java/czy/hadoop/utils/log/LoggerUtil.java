@@ -3,7 +3,7 @@ package czy.hadoop.utils.log;
 
 import czy.hadoop.common.Constant;
 import czy.hadoop.utils.ip.IPSeekerExt;
-import czy.hadoop.utils.userAgent.UserAgentUtil;
+import czy.hadoop.utils.userAgent.UserAgent_Util;
 import czy.hadoop.utils.util.TimeUtil;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -12,7 +12,7 @@ import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Map;
 
-import czy.hadoop.utils.userAgent.UserAgentInfo;
+import czy.hadoop.utils.userAgent.UserAgentInfo_Model;
 
 
 /**
@@ -90,7 +90,7 @@ public class LoggerUtil {
      */
     private static void handleUserAgent(Map<String, String> clientInfo) {
         if (clientInfo.containsKey(Constant.LOG_COLUMN_NAME_USER_AGENT)) {
-            UserAgentInfo info = UserAgentUtil.analyticUserAgent(clientInfo.get(Constant.LOG_COLUMN_NAME_USER_AGENT));
+            UserAgentInfo_Model info = UserAgent_Util.analyticUserAgent(clientInfo.get(Constant.LOG_COLUMN_NAME_USER_AGENT));
             if (info != null) {
                 clientInfo.put(Constant.LOG_COLUMN_NAME_OS_NAME, info.getOsName());
                 clientInfo.put(Constant.LOG_COLUMN_NAME_OS_VERSION, info.getOsVersion());
