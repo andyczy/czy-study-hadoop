@@ -12,6 +12,13 @@
     <artifactId>project-etl</artifactId>
 
     <dependencies>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
+
         <!--userAgent解析需要-->
         <dependency>
             <groupId>cz.mallat.uasparser</groupId>
@@ -38,7 +45,11 @@
             <groupId>org.apache.hbase</groupId>
             <artifactId>hbase-client</artifactId>
             <version>0.98.6-hadoop2</version>
-        </dependency>
+        </dependency><dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>RELEASE</version>
+    </dependency>
         <!-- hbase end -->
     </dependencies>
 

@@ -11,8 +11,11 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 
-/** */
-/**
+
+ /**
+ * @Auther 陈郑游
+ * @Data 2017/9/27 0027
+ * @Description:
  * * 用来读取QQwry.dat文件，以根据ip获得好友位置，QQwry.dat的格式是 一. 文件头，共8字节 1. 第一个起始IP的绝对偏移， 4字节
  * 2. 最后一个起始IP的绝对偏移， 4字节 二. "结束地址/国家/区域"记录区 四字节ip地址后跟的每一条记录分成两个部分 1. 国家记录 2.
  * 地区记录 但是地区记录是不一定有的。而且国家记录和地区记录都有两种形式 1. 以0结束的字符串 2. 4个字节，一个字节可能为0x1或0x2 a.
@@ -20,11 +23,10 @@ import java.util.List;
  * 不管为0x1还是0x2，后三个字节都是实际国家名的文件内绝对偏移
  * 如果是地区记录，0x1和0x2的含义不明，但是如果出现这两个字节，也肯定是跟着3个字节偏移，如果不是 则为0结尾字符串 三.
  * "起始地址/结束地址偏移"记录区 1. 每条记录7字节，按照起始地址从小到大排列 a. 起始IP地址，4字节 b. 结束ip地址的绝对偏移，3字节
- * 
+ *
  * 注意，这个文件里的ip地址和所有的偏移量均采用little-endian格式，而java是采用 big-endian格式的，要注意转换
- * 
- * 
- * @author gerry
+ * @CSDN:http://blog.csdn.net/javawebrookie
+ * @GITHUB:https://github.com/AndyCZY
  */
 public class IPSeeker {
     // 一些固定常量，比如记录长度等等
@@ -48,7 +50,7 @@ public class IPSeeker {
     private byte[] b4;
     private byte[] b3;
 
-    /** */
+
     /**
      * 私有构造函数
      */
@@ -82,7 +84,7 @@ public class IPSeeker {
         }
     }
 
-    /** */
+
     /**
      * @return 单一实例
      */
@@ -93,7 +95,7 @@ public class IPSeeker {
         return instance;
     }
 
-    /** */
+
     /**
      * 给定一个地点的不完全名字，得到一系列包含s子串的IP范围记录
      * 
@@ -129,7 +131,7 @@ public class IPSeeker {
         return ret;
     }
 
-    /** */
+
     /**
      * 给定一个地点的不完全名字，得到一系列包含s子串的IP范围记录
      * 
@@ -174,7 +176,7 @@ public class IPSeeker {
         return ret;
     }
 
-    /** */
+
     /**
      * 从内存映射文件的offset位置开始的3个字节读取一个int
      * 
@@ -186,7 +188,7 @@ public class IPSeeker {
         return mbb.getInt() & 0x00FFFFFF;
     }
 
-    /** */
+
     /**
      * 从内存映射文件的当前位置开始的3个字节读取一个int
      * 
@@ -196,7 +198,7 @@ public class IPSeeker {
         return mbb.getInt() & 0x00FFFFFF;
     }
 
-    /** */
+
     /**
      * 根据IP得到国家名
      * 
@@ -221,7 +223,7 @@ public class IPSeeker {
         }
     }
 
-    /** */
+
     /**
      * 根据IP得到国家名
      * 
@@ -233,7 +235,7 @@ public class IPSeeker {
         return getCountry(IPSeekerUtils.getIpByteArrayFromString(ip));
     }
 
-    /** */
+
     /**
      * 根据IP得到地区名
      * 
@@ -269,7 +271,7 @@ public class IPSeeker {
         return getArea(IPSeekerUtils.getIpByteArrayFromString(ip));
     }
 
-    /** */
+
     /**
      * 根据ip搜索ip信息文件，得到IPLocation结构，所搜索的ip参数从类成员ip中得到
      * 

@@ -1,13 +1,15 @@
 package czy.hadoop.utils.ip;
 
 
-/**
- * 定义具体的ip解析的类，最终调用IpSeeker类(父类)<br/>
+ /**
+ * @Auther 陈郑游
+ * @Data 2017/9/27 0027
+ * @Description:  * 定义具体的ip解析的类，最终调用IpSeeker类(父类)<br/>
  * 解析ip最终的返回时：国家名称 省份名称 城市名称<br/>
  * 如果是国外的ip，那么直接设置为unknown unknown unknown<br/>
  * 如果是国内ip，如果没法进行解析，那么就设置为中国 unknown unknown<br/>
- * 
- *
+ * @CSDN:http://blog.csdn.net/javawebrookie
+ * @GITHUB:https://github.com/AndyCZY
  */
 public class IPSeekerExt extends IPSeeker {
 	private RegionInfo DEFAULT_INFO = new RegionInfo();
@@ -116,47 +118,5 @@ public class IPSeekerExt extends IPSeeker {
 			e.printStackTrace();
 		}
 		return info;
-	}
-
-	/**
-	 * ip地域相关的一个model
-	 * 
-	 * @author gerry
-	 *
-	 */
-	public static class RegionInfo {
-		public static final String DEFAULT_VALUE = "unknown"; // 默认值
-		private String country = DEFAULT_VALUE; // 国家
-		private String province = DEFAULT_VALUE; // 省份
-		private String city = DEFAULT_VALUE; // 城市
-
-		public String getCountry() {
-			return country;
-		}
-
-		public void setCountry(String country) {
-			this.country = country;
-		}
-
-		public String getProvince() {
-			return province;
-		}
-
-		public void setProvince(String province) {
-			this.province = province;
-		}
-
-		public String getCity() {
-			return city;
-		}
-
-		public void setCity(String city) {
-			this.city = city;
-		}
-
-		@Override
-		public String toString() {
-			return "RegionInfo [country=" + country + ", province=" + province + ", city=" + city + "]";
-		}
 	}
 }

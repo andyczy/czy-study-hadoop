@@ -3,6 +3,8 @@ package czy.hadoop.utils.log;
 
 import czy.hadoop.common.Constant;
 import czy.hadoop.utils.ip.IPSeekerExt;
+import czy.hadoop.utils.ip.RegionInfo;
+import czy.hadoop.utils.userAgent.UserAgentInfo_Model;
 import czy.hadoop.utils.userAgent.UserAgent_Util;
 import czy.hadoop.utils.util.TimeUtil;
 import org.apache.commons.lang.StringUtils;
@@ -11,8 +13,6 @@ import org.apache.log4j.Logger;
 import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Map;
-
-import czy.hadoop.utils.userAgent.UserAgentInfo_Model;
 
 
 /**
@@ -74,7 +74,7 @@ public class LoggerUtil {
     private static void handleIp(Map<String,String> clientInfo) {
         if (clientInfo.containsKey(Constant.LOG_COLUMN_NAME_IP)) {
             String ip = clientInfo.get(Constant.LOG_COLUMN_NAME_IP);
-            IPSeekerExt.RegionInfo info = ipSeekerExt.analyticIp(ip);
+            RegionInfo info = ipSeekerExt.analyticIp(ip);
             if (info != null) {
                 clientInfo.put(Constant.LOG_COLUMN_NAME_COUNTRY, info.getCountry());
                 clientInfo.put(Constant.LOG_COLUMN_NAME_PROVINCE, info.getProvince());
