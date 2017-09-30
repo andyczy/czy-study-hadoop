@@ -20,9 +20,9 @@ public class HdfsCreateTest {
 
     public static void main(String[] args) throws Exception{
         absolutePath();   //绝对路径
-        relativePath();   //相对路径
-        appendContent();  //追加内容
-        bufferedContent(); //添加内容
+//        relativePath();   //相对路径
+//        appendContent();  //追加内容
+//        bufferedContent(); //添加内容
     }
 
 

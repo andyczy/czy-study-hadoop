@@ -2,13 +2,11 @@ package com.czy.hadoop.model;
 
 import org.apache.commons.lang.StringUtils;
 
-
- /**
- * @Auther 陈郑游
- * @Data 2017/9/9 0009
- * @Description: 返回结果
- * @CSDN:http://blog.csdn.net/javawebrookie
- * @GITHUB:https://github.com/AndyCZY
+/**
+ * 返回结果
+ * 
+ * @author gerry
+ * 
  */
 public class Message {
 

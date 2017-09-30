@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:hdp="http://www.springframework.org/schema/hadoop"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
     xmlns:cache="http://www.springframework.org/schema/cache"
     xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xmlns:oxm="http://www.springframework.org/schema/oxm"
-    xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c"
+    xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:oxm="http://www.springframework.org/schema/oxm"
+    xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
     xmlns:util="http://www.springframework.org/schema/util"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop
-        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
         http://www.springframework.org/schema/cache
         http://www.springframework.org/schema/cache/spring-cache.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
         http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
         http://www.springframework.org/schema/util
-        http://www.springframework.org/schema/util/spring-util.xsd " default-autowire="byName">
-
-
+        http://www.springframework.org/schema/util/spring-util-3.0.xsd
+        " default-autowire="byName">
     <!-- 创建jdbc -->
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
@@ -32,8 +28,6 @@
             </list>
         </property>
     </bean>
-
-
 
 	<import resource="classpath*:aeConfigContext.xml" /> <!-- ae相关配置信息 -->    
 
@@ -55,7 +49,7 @@
 	<bean id="aeSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="aeDataSource" />
         <property name="mapperLocations">
-            <value>classpath*:com/czy/hadoop/**/*Mapper.xml</value>
+            <value>classpath*:com/beifeng/ae/**/*Mapper.xml</value>
         </property>
     </bean>
 
@@ -64,34 +58,34 @@
     </bean>    
         
     <!-- 具体service bean -->
-    <!-- <bean id="userBehaviorSpeedRateService" class="com.czy.hadoop.service.impl.UserBehaviorSpeedRateServiceImpl"></bean> -->
+    <!-- <bean id="userBehaviorSpeedRateService" class="com.beifeng.ae.service.impl.UserBehaviorSpeedRateServiceImpl"></bean> -->
     <!-- 具体service bean结束 -->
 
     <!-- bucket.metric 对应的计算类bean -->
-    <!-- <bean id="user_behavior.active_user_rate" class="com.czy.hadoop.calculate.impl.ActiveRateCalculater"/> -->
+    <!-- <bean id="user_behavior.active_user_rate" class="com.beifeng.ae.calculate.impl.ActiveRateCalculater"/> -->
     <!-- bucket.metric 对应的计算类bean结束 -->
 
     <!-- dao相关bean -->
     <bean id="baseDao" abstract="true">
         <property name="sqlSessionTemplate" ref="aeSqlSessionTemplate" />
     </bean>
-    <bean id="aeDao" class="com.czy.hadoop.dao.mybatis.AEDao" parent="baseDao"></bean>
-    <bean id="dimensionDao" class="com.czy.hadoop.dao.impl.DimensionDaoImpl" parent="baseDao"></bean>
-    <bean id="dateDimensionDao" class="com.czy.hadoop.dao.impl.DateDimensionDaoImpl" parent="baseDao"></bean>
-    <bean id="platformDimeDao" class="com.czy.hadoop.dao.impl.PlatformDimensionDaoImpl" parent="baseDao"></bean>
-    <bean id="kpiDimeDao" class="com.czy.hadoop.dao.impl.KpiDimensionDaoImpl" parent="baseDao"></bean>
+    <bean id="aeDao" class="com.beifeng.ae.dao.mybatis.AEDao" parent="baseDao"></bean>
+    <bean id="dimensionDao" class="com.beifeng.ae.dao.impl.DimensionDaoImpl" parent="baseDao"></bean>
+    <bean id="dateDimensionDao" class="com.beifeng.ae.dao.impl.DateDimensionDaoImpl" parent="baseDao"></bean>
+    <bean id="platformDimeDao" class="com.beifeng.ae.dao.impl.PlatformDimensionDaoImpl" parent="baseDao"></bean>
+    <bean id="kpiDimeDao" class="com.beifeng.ae.dao.impl.KpiDimensionDaoImpl" parent="baseDao"></bean>
     <!-- dao相关bean结束 -->
 
     <!-- 共用service bean -->
-    <bean id = "aeService" class="com.czy.hadoop.service.impl.AEServiceImpl">
+    <bean id = "aeService" class="com.beifeng.ae.service.impl.AEServiceImpl">
         <property name="aeDao" ref="aeDao"></property>
     </bean>
-    <bean id="dimensionService" class="com.czy.hadoop.service.impl.DimensionServiceImpl">
+    <bean id="dimensionService" class="com.beifeng.ae.service.impl.DimensionServiceImpl">
         <property name="dimeDao" ref="dimensionDao"></property>
         <property name="dateDimeDao" ref="dateDimensionDao"></property>
         <property name="platformDimeDao" ref="platformDimeDao"></property>
         <property name="kpiDimeDao" ref="kpiDimeDao"></property>
     </bean>
-    <bean class="com.czy.hadoop.util.ApplicationContextUtil"/>
+    <bean class="com.beifeng.ae.util.ApplicationContextUtil"/>
     <!-- 共用service bean结束 -->
 </beans>

@@ -1,13 +1,12 @@
 package com.czy.hadoop.common;
 
 /**
- * @Auther 陈郑游
- * @Data 2017/9/9 0009
- * @Description: 常量
- * @CSDN:http://blog.csdn.net/javawebrookie
- * @GITHUB:https://github.com/AndyCZY
+ * 常量类
+ * 
+ * @author gerry
+ *
  */
-public class AnEnConstants {
+public class AEConstants {
     // default value
     public static final String ALL = "all";
     public static final String DAY = "day";
@@ -22,7 +21,10 @@ public class AnEnConstants {
 
     public static final String DIMENSION_PLATFORM_ID = "dimension_platform_id";
     public static final String PLATFORM = "platform";
+    
 
+    
+    
 
     // other
     public static final String SEPARTION_COMMA = ",";
