@@ -7,6 +7,13 @@ import java.util.List;
 import java.util.Map;
 
 
+/**
+ * @Auther 陈郑游
+ * @Data 2017/9/30 0030
+ * @Description:
+ * @CSDN:http://blog.csdn.net/javawebrookie
+ * @GITHUB:https://github.com/AndyCZY
+ */
 public class DimensionDaoImpl extends BaseDao implements DimensionDao {
 
     private static String nameSpace = DimensionDao.class.getName();

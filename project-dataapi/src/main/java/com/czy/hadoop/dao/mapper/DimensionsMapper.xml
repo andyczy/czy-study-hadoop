@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.beifeng.ae.dao.DimensionDao">
+<mapper namespace="com.czy.hadoop.dao.DimensionDao">
     <select id="queryDimensions" parameterType="java.util.Map" resultType="hashMap">
         <choose>
             <when test="select_columns != null and select_columns != ''">

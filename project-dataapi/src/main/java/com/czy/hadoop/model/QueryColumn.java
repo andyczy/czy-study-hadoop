@@ -1,12 +1,14 @@
 package com.czy.hadoop.model;
 
-import com.beifeng.ae.common.AEConstants;
 
-/**
- * 定义我们的参数，mybatis中使用的具体参数
- * 
- * @author gerry
- *
+import com.czy.hadoop.common.AEConstants;
+
+ /**
+ * @Auther 陈郑游
+ * @Data 2017/9/30 0030
+ * @Description: 定义我们的参数，mybatis中使用的具体参数
+ * @CSDN:http://blog.csdn.net/javawebrookie
+ * @GITHUB:https://github.com/AndyCZY
  */
 public class QueryColumn implements Cloneable {
     private String type = AEConstants.DAY; // 日期type类型

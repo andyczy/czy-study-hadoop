@@ -1,9 +1,18 @@
 package com.czy.hadoop.service.impl;
 
-import com.beifeng.ae.dao.PlatformDimensionDao;
-import com.beifeng.ae.dao.mybatis.BaseDao;
-import com.beifeng.ae.model.PlatformDimension;
 
+import com.czy.hadoop.dao.PlatformDimensionDao;
+import com.czy.hadoop.dao.mybatis.BaseDao;
+import com.czy.hadoop.model.PlatformDimension;
+
+
+/**
+ * @Auther 陈郑游
+ * @Data 2017/9/30 0030
+ * @Description:
+ * @CSDN:http://blog.csdn.net/javawebrookie
+ * @GITHUB:https://github.com/AndyCZY
+ */
 public class PlatformDimensionDaoImpl extends BaseDao implements PlatformDimensionDao {
 
     private static String modelClass = PlatformDimension.class.getName();

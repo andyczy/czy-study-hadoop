@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.beifeng.ae.model.KpiDimension">
-    <resultMap type="com.beifeng.ae.model.KpiDimension" id="kpiMapper">
+    <resultMap type="com.czy.hadoop.model.KpiDimension" id="kpiMapper">
         <id column="id" property="id"/>
         <result column="kpi_name" property="kpiName" />
     </resultMap>

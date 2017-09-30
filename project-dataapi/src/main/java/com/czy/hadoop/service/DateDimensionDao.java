@@ -1,7 +1,17 @@
 package com.czy.hadoop.service;
 
-import com.beifeng.ae.model.DateDimension;
 
+import com.czy.hadoop.model.DateDimension;
+
+
+
+/**
+ * @Auther 陈郑游
+ * @Data 2017/9/30 0030
+ * @Description:
+ * @CSDN:http://blog.csdn.net/javawebrookie
+ * @GITHUB:https://github.com/AndyCZY
+ */
 public interface DateDimensionDao {
     public Integer getDateDimensionId(DateDimension date);
 

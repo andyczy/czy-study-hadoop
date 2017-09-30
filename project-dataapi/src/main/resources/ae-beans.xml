@@ -77,15 +77,15 @@
     <!-- dao相关bean结束 -->
 
     <!-- 共用service bean -->
-    <bean id = "aeService" class="com.beifeng.ae.service.impl.AEServiceImpl">
+    <bean id = "aeService" class="com.czy.hadoop.service.impl.AEServiceImpl">
         <property name="aeDao" ref="aeDao"></property>
     </bean>
-    <bean id="dimensionService" class="com.beifeng.ae.service.impl.DimensionServiceImpl">
+    <bean id="dimensionService" class="com.czy.hadoop.service.impl.DimensionServiceImpl">
         <property name="dimeDao" ref="dimensionDao"></property>
         <property name="dateDimeDao" ref="dateDimensionDao"></property>
         <property name="platformDimeDao" ref="platformDimeDao"></property>
         <property name="kpiDimeDao" ref="kpiDimeDao"></property>
     </bean>
-    <bean class="com.beifeng.ae.util.ApplicationContextUtil"/>
+    <bean class="com.czy.hadoop.util.ApplicationContextUtil"/>
     <!-- 共用service bean结束 -->
 </beans>

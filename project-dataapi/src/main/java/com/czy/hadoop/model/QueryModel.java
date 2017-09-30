@@ -7,11 +7,13 @@ import java.util.Set;
 
 import org.apache.commons.lang.StringUtils;
 
-/**
- * 查询的model类
- * 
- * @author gerry
- *
+
+ /**
+ * @Auther 陈郑游
+ * @Data 2017/9/30 0030
+ * @Description: 查询的model类
+ * @CSDN:http://blog.csdn.net/javawebrookie
+ * @GITHUB:https://github.com/AndyCZY
  */
 public class QueryModel {
     private String queryId; // 唯一定位的id，每个api不同

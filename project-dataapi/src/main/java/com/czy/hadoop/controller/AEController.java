@@ -21,15 +21,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 
 
-
-/**
- * 处理数据请求接口<br/>
+ /**
+ * @Auther 陈郑游
+ * @Data 2017/9/30 0030
+ * @Description:
+ *  * 处理数据请求接口<br/>
  * rest api summary: /stats/summary/{bucket}?metric=xxx&其他参数<br/>
  * rest api group by: /stats/groupBy/{bucket}?metric=xxx&group_by=xxx&其他参数<br/>
  * 返回值是：json格式的数据，参数MessageEntry
- * 
- * @author gerry
- *
+ * @CSDN:http://blog.csdn.net/javawebrookie
+ * @GITHUB:https://github.com/AndyCZY
  */
 @Controller
 public class AEController extends AEBaseController {

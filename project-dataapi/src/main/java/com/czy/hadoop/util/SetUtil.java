@@ -2,6 +2,14 @@ package com.czy.hadoop.util;
 
 import java.util.Set;
 
+
+/**
+ * @Auther 陈郑游
+ * @Data 2017/9/30 0030
+ * @Description:
+ * @CSDN:http://blog.csdn.net/javawebrookie
+ * @GITHUB:https://github.com/AndyCZY
+ */
 public class SetUtil {
     /**
      * 主要用于判断是否存在<br/>

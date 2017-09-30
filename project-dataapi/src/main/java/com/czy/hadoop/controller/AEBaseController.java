@@ -17,11 +17,13 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * 基础controller类
- * 
- * @author gerry
- *
+
+ /**
+ * @Auther 陈郑游
+ * @Data 2017/9/30 0030
+ * @Description: 基础controller类
+ * @CSDN:http://blog.csdn.net/javawebrookie
+ * @GITHUB:https://github.com/AndyCZY
  */
 public abstract class AEBaseController {
     private static final Logger log = Logger.getLogger(AEBaseController.class);

@@ -1,23 +1,22 @@
 package com.czy.hadoop.service.impl;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import com.czy.hadoop.calculate.AECalculate;
+import com.czy.hadoop.common.AEConstants;
+import com.czy.hadoop.dao.mybatis.AEDao;
+import com.czy.hadoop.model.QueryModel;
+import com.czy.hadoop.service.AEService;
+import com.czy.hadoop.util.ApplicationContextUtil;
 
-import com.beifeng.ae.calculate.AECalculate;
-import com.beifeng.ae.common.AEConstants;
-import com.beifeng.ae.dao.mybatis.AEDao;
-import com.beifeng.ae.model.QueryModel;
-import com.beifeng.ae.service.AEService;
-import com.beifeng.ae.util.ApplicationContextUtil;
+import java.util.*;
 
-/**
- * 默认的aeservice实现类
- * 
- * @author gerry
- *
+
+
+ /**
+ * @Auther 陈郑游
+ * @Data 2017/9/30 0030
+ * @Description: 默认的aeservice实现类
+ * @CSDN:http://blog.csdn.net/javawebrookie
+ * @GITHUB:https://github.com/AndyCZY
  */
 public class AEServiceImpl implements AEService {
     private AEDao aeDao;

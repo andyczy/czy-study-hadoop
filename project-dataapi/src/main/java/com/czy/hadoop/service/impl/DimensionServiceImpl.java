@@ -1,16 +1,23 @@
 package com.czy.hadoop.service.impl;
 
+import com.czy.hadoop.dao.DateDimensionDao;
+import com.czy.hadoop.dao.DimensionDao;
+import com.czy.hadoop.dao.KpiDimensionDao;
+import com.czy.hadoop.dao.PlatformDimensionDao;
+import com.czy.hadoop.model.KpiDimension;
+import com.czy.hadoop.model.PlatformDimension;
+import com.czy.hadoop.service.DimensionService;
+
 import java.util.List;
 import java.util.Map;
 
-import com.beifeng.ae.dao.DateDimensionDao;
-import com.beifeng.ae.dao.DimensionDao;
-import com.beifeng.ae.dao.KpiDimensionDao;
-import com.beifeng.ae.dao.PlatformDimensionDao;
-import com.beifeng.ae.model.KpiDimension;
-import com.beifeng.ae.model.PlatformDimension;
-import com.beifeng.ae.service.DimensionService;
-
+/**
+ * @Auther 陈郑游
+ * @Data 2017/9/30 0030
+ * @Description:
+ * @CSDN:http://blog.csdn.net/javawebrookie
+ * @GITHUB:https://github.com/AndyCZY
+ */
 public class DimensionServiceImpl implements DimensionService {
     private DimensionDao dimeDao;
     private DateDimensionDao dateDimeDao;

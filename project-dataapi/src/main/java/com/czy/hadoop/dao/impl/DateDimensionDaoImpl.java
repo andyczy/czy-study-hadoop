@@ -1,9 +1,19 @@
 package com.czy.hadoop.dao.impl;
 
-import com.beifeng.ae.dao.DateDimensionDao;
-import com.beifeng.ae.dao.mybatis.BaseDao;
-import com.beifeng.ae.model.DateDimension;
 
+import com.czy.hadoop.dao.DateDimensionDao;
+import com.czy.hadoop.dao.mybatis.BaseDao;
+import com.czy.hadoop.model.DateDimension;
+
+
+
+/**
+ * @Auther 陈郑游
+ * @Data 2017/9/30 0030
+ * @Description:
+ * @CSDN:http://blog.csdn.net/javawebrookie
+ * @GITHUB:https://github.com/AndyCZY
+ */
 public class DateDimensionDaoImpl extends BaseDao implements DateDimensionDao {
 
     private static String modelClass = DateDimension.class.getName();
