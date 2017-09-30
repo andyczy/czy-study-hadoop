@@ -24,12 +24,12 @@
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-                <value>classpath:jdbc.properties</value>
+                <value>classpath:config/jdbc.properties</value>
             </list>
         </property>
     </bean>
 
-	<import resource="classpath*:aeConfigContext.xml" /> <!-- ae相关配置信息 -->    
+	<import resource="classpath*:spring/spring-context.xmlext.xml" /> <!-- ae相关配置信息 -->
 
     <bean id="aeDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
         destroy-method="close">

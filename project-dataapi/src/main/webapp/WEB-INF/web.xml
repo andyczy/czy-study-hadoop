@@ -10,12 +10,12 @@
 
     <context-param>
         <param-name>log4jConfigLocation</param-name>
-        <param-value>classpath:log4j.properties</param-value>
+        <param-value>classpath:config/log4j.properties</param-value>
     </context-param>
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring-beans.xml</param-value>
+        <param-value>classpath:spring/spring-beans.xml</param-value>
     </context-param>
 
     <listener>
@@ -47,7 +47,7 @@
         <init-param>
             <description>mvc.xml</description>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:spring-mvc.xml</param-value>
+            <param-value>classpath:spring/spring-mvc.xml</param-value>
         </init-param>
     </servlet>
 
