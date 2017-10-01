@@ -15,7 +15,7 @@ import java.util.Map;
  * @CSDN:http://blog.csdn.net/javawebrookie
  * @GITHUB:https://github.com/AndyCZY
  */
-public interface AEService {
+public interface AnEnService {
     public List<Map<String, Object>> execute(QueryModel queryModel) throws Exception;
 
 }

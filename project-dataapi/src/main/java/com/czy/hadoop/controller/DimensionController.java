@@ -1,6 +1,6 @@
 package com.czy.hadoop.controller;
 
-import com.czy.hadoop.common.AEConstants;
+import com.czy.hadoop.common.AnEnConstants;
 import com.czy.hadoop.model.Message;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
@@ -25,7 +25,7 @@ import java.util.Map;
  * @GITHUB:https://github.com/AndyCZY
  */
 @Controller
-public class DimensionController extends AEBaseController{
+public class DimensionController extends AnEnBaseController {
 
     @Resource(name = "dimensionTableMapping")
     private Map<String, String> dimensionTableMapping;
@@ -36,8 +36,8 @@ public class DimensionController extends AEBaseController{
     @RequestMapping(value = "/stats/getDimensions", method = RequestMethod.GET)
     @ResponseBody
     public Object getDimensions(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String dimens = request.getParameter(AEConstants.DIMENSIONS);
-        String[] dimensions = StringUtils.split(dimens, AEConstants.SEPARTION_COMMA);
+        String dimens = request.getParameter(AnEnConstants.DIMENSIONS);
+        String[] dimensions = StringUtils.split(dimens, AnEnConstants.SEPARTION_COMMA);
         if (null == dimensions) {
             return Message.badRequest("请求参数无效,必须给定dimensions参数");
         }
@@ -54,14 +54,14 @@ public class DimensionController extends AEBaseController{
             if (!result.containsKey(dimension)) {
                 paramsMap.clear();
                 if (dimensionColumns.containsKey(dimension)) {
-                    paramsMap.put(AEConstants.SELECT_COLUMNS, dimensionColumns.get(dimension));
+                    paramsMap.put(AnEnConstants.SELECT_COLUMNS, dimensionColumns.get(dimension));
                 }
                 String tableName = dimensionTableMapping.get(dimension);
-                paramsMap.put(AEConstants.TABLE_NAME, tableName);
-                if (dimension.startsWith(AEConstants.LOCATION)) {
-                    paramsMap.put(AEConstants.DIMENSION_NAME, dimension);
-                    paramsMap.put(AEConstants.COUNTRY_NAME, request.getParameter(AEConstants.COUNTRY_NAME));
-                    paramsMap.put(AEConstants.PROVINCE_NAME, request.getParameter(AEConstants.PROVINCE_NAME));
+                paramsMap.put(AnEnConstants.TABLE_NAME, tableName);
+                if (dimension.startsWith(AnEnConstants.LOCATION)) {
+                    paramsMap.put(AnEnConstants.DIMENSION_NAME, dimension);
+                    paramsMap.put(AnEnConstants.COUNTRY_NAME, request.getParameter(AnEnConstants.COUNTRY_NAME));
+                    paramsMap.put(AnEnConstants.PROVINCE_NAME, request.getParameter(AnEnConstants.PROVINCE_NAME));
                 }
                 data = dimensionService.queryDimensionData(paramsMap);
                 result.put(dimension, data);

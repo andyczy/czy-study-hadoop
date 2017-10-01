@@ -1,11 +1,12 @@
 package com.czy.hadoop.controller;
 
 
-import com.czy.hadoop.common.AEConstants;
+import com.czy.hadoop.common.AnEnConstants;
 import com.czy.hadoop.model.Message;
+import com.czy.hadoop.model.Message.MessageEntry;
 import com.czy.hadoop.model.PlatformDimension;
 import com.czy.hadoop.model.QueryColumn;
-import com.czy.hadoop.service.AEService;
+import com.czy.hadoop.service.AnEnService;
 import com.czy.hadoop.service.DimensionService;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -17,6 +18,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 import java.util.Set;
 
+;
+
 
  /**
  * @Auther 陈郑游
@@ -25,8 +28,11 @@ import java.util.Set;
  * @CSDN:http://blog.csdn.net/javawebrookie
  * @GITHUB:https://github.com/AndyCZY
  */
-public abstract class AEBaseController {
-    private static final Logger log = Logger.getLogger(AEBaseController.class);
+public abstract class AnEnBaseController {
+
+    private static final Logger log = Logger.getLogger(AnEnBaseController.class);
+
+
     // bucket和metric的映射关系
     @Resource
     protected Map<String, Set<Object>> bucketMetrics;
@@ -41,20 +47,21 @@ public abstract class AEBaseController {
     protected Map<String, String> bucketMetricColumns;
 
     @Resource(name = "aeService")
-    protected AEService aeService;
+    protected AnEnService aeService;
 
     @Resource(name = "dimensionService")
     protected DimensionService dimensionService;
 
+
+
     /**
      * 全局的处理异常方法
-     * 
      * @param e
      * @return
      */
     @ExceptionHandler(Throwable.class)
     @ResponseBody
-    public Message.MessageEntry handleThrowable(Throwable e) {
+    public MessageEntry handleThrowable(Throwable e) {
         log.error("服务器发现异常", e);
         return Message.error(e.getMessage());
     }
@@ -68,7 +75,7 @@ public abstract class AEBaseController {
      * @return
      */
     protected boolean setDimensionPlatformId(HttpServletRequest request, Set<String> groups, QueryColumn queryColumn) {
-        String platformId = request.getParameter(AEConstants.DIMENSION_PLATFORM_ID);
+        String platformId = request.getParameter(AnEnConstants.DIMENSION_PLATFORM_ID);
         int dimensionId = 0;
         try {
             dimensionId = StringUtils.isBlank(platformId) ? 0 : Integer.valueOf(platformId.trim());
@@ -84,10 +91,10 @@ public abstract class AEBaseController {
 
         // 如果获取的值为空，那么读取platform参数，进行解析操作
         if (dimension == null) {
-            String platform = request.getParameter(AEConstants.PLATFORM);
+            String platform = request.getParameter(AnEnConstants.PLATFORM);
             // 判断group by操作
-            platform = this.checkGroupByColumn(platform, AEConstants.PLATFORM, groups);
-            if (AEConstants.GROUP_BY.equals(platform)) {
+            platform = this.checkGroupByColumn(platform, AnEnConstants.PLATFORM, groups);
+            if (AnEnConstants.GROUP_BY.equals(platform)) {
                 dimensionId = 0;
             } else {
                 dimension = this.dimensionService.getPlatformDimension(platform);
@@ -116,9 +123,9 @@ public abstract class AEBaseController {
     protected String checkGroupByColumn(String column, String groupBy, Set<String> groups) {
         if (StringUtils.isBlank(column)) {
             if (groups.isEmpty() || !groups.contains(groupBy)) {
-                return AEConstants.ALL;
+                return AnEnConstants.ALL;
             }
-            return AEConstants.GROUP_BY;
+            return AnEnConstants.GROUP_BY;
         }
         return column.trim();
     }

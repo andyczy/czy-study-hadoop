@@ -8,7 +8,7 @@ package com.czy.hadoop.common;
  * @CSDN:http://blog.csdn.net/javawebrookie
  * @GITHUB:https://github.com/AndyCZY
  */
-public class AEConstants {
+public class AnEnConstants {
     // default value
     public static final String ALL = "all";
     public static final String DAY = "day";

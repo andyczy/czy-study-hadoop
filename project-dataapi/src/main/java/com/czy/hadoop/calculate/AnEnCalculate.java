@@ -10,7 +10,7 @@ import java.util.Map;
  * @CSDN:http://blog.csdn.net/javawebrookie
  * @GITHUB:https://github.com/AndyCZY
  */
-public interface AECalculate {
+public interface AnEnCalculate {
     /**
      * 计算结果
      * 

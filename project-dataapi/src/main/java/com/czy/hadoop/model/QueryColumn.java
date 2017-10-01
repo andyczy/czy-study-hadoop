@@ -1,7 +1,7 @@
 package com.czy.hadoop.model;
 
 
-import com.czy.hadoop.common.AEConstants;
+import com.czy.hadoop.common.AnEnConstants;
 
  /**
  * @Auther 陈郑游
@@ -11,7 +11,7 @@ import com.czy.hadoop.common.AEConstants;
  * @GITHUB:https://github.com/AndyCZY
  */
 public class QueryColumn implements Cloneable {
-    private String type = AEConstants.DAY; // 日期type类型
+    private String type = AnEnConstants.DAY; // 日期type类型
     private String startDate;
     private String endDate;
     private String location;

@@ -1,10 +1,10 @@
 package com.czy.hadoop.service.impl;
 
-import com.czy.hadoop.calculate.AECalculate;
-import com.czy.hadoop.common.AEConstants;
+import com.czy.hadoop.calculate.AnEnCalculate;
+import com.czy.hadoop.common.AnEnConstants;
 import com.czy.hadoop.dao.mybatis.AEDao;
 import com.czy.hadoop.model.QueryModel;
-import com.czy.hadoop.service.AEService;
+import com.czy.hadoop.service.AnEnService;
 import com.czy.hadoop.util.ApplicationContextUtil;
 
 import java.util.*;
@@ -18,7 +18,7 @@ import java.util.*;
  * @CSDN:http://blog.csdn.net/javawebrookie
  * @GITHUB:https://github.com/AndyCZY
  */
-public class AEServiceImpl implements AEService {
+public class AEServiceImpl implements AnEnService {
     private AEDao aeDao;
 
     public void setAeDao(AEDao aeDao) {
@@ -52,18 +52,18 @@ public class AEServiceImpl implements AEService {
                     if (metricCloumnValue == null) {
                         metricCloumnValue = 0;
                     }
-                    if (AEConstants.KPI_NAME.equals(metricCloumn)) {
+                    if (AnEnConstants.KPI_NAME.equals(metricCloumn)) {
                         metricCloumnValues.put(metricCloumn, metricCloumnValue);
                     } else {
-                        metricCloumnValues.put(AEConstants.PRIFIX + metricCloumn, metricCloumnValue);
+                        metricCloumnValues.put(AnEnConstants.PRIFIX + metricCloumn, metricCloumnValue);
                     }
                 }
 
                 // 获取后期计算calculate对象
-                String beanId = queryModel.getBucket() + AEConstants.DELIMITER + metricKey;
-                AECalculate aeCalculate = null;
+                String beanId = queryModel.getBucket() + AnEnConstants.DELIMITER + metricKey;
+                AnEnCalculate aeCalculate = null;
                 if (ApplicationContextUtil.getApplicationContext().containsBean(beanId)) {
-                    aeCalculate = (AECalculate) ApplicationContextUtil.getApplicationContext().getBean(beanId);
+                    aeCalculate = (AnEnCalculate) ApplicationContextUtil.getApplicationContext().getBean(beanId);
                 }
 
                 // 根据是否有calculate对象来进行数据填充操作
@@ -74,7 +74,7 @@ public class AEServiceImpl implements AEService {
                     if (calculateRes instanceof Map) {
                         resMap.putAll((Map<String, Object>) calculateRes);
                     } else {
-                        resMap.put(AEConstants.PRIFIX + metricKey, calculateRes);
+                        resMap.put(AnEnConstants.PRIFIX + metricKey, calculateRes);
                     }
                 }
             }
@@ -82,8 +82,8 @@ public class AEServiceImpl implements AEService {
             // 处理分组情况
             if (groups != null) {
                 for (String cloumn : allCloumn) {
-                    if (cloumn.startsWith(AEConstants.GROUP_FLAG)) {
-                        String c = cloumn.replace(AEConstants.GROUP_FLAG, AEConstants.EMPTY_STR);
+                    if (cloumn.startsWith(AnEnConstants.GROUP_FLAG)) {
+                        String c = cloumn.replace(AnEnConstants.GROUP_FLAG, AnEnConstants.EMPTY_STR);
                         resMap.put(c, metricDataItem.get(cloumn));
                     }
                 }

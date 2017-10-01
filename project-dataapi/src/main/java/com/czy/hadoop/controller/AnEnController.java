@@ -1,10 +1,10 @@
 package com.czy.hadoop.controller;
 
-import com.czy.hadoop.common.AEConstants;
+import com.czy.hadoop.common.AnEnConstants;
 import com.czy.hadoop.model.Message;
 import com.czy.hadoop.model.QueryColumn;
 import com.czy.hadoop.model.QueryModel;
-import com.czy.hadoop.service.AEService;
+import com.czy.hadoop.service.AnEnService;
 import com.czy.hadoop.util.ApplicationContextUtil;
 import com.czy.hadoop.util.SetUtil;
 import com.czy.hadoop.util.TimeUtil;
@@ -33,39 +33,42 @@ import java.util.*;
  * @GITHUB:https://github.com/AndyCZY
  */
 @Controller
-public class AEController extends AEBaseController {
-    private static Logger log = Logger.getLogger(AEController.class);
+public class AnEnController extends AnEnBaseController {
+
+    private static Logger log = Logger.getLogger(AnEnController.class);
+
 
     /**
-     * 处理summary请求
-     * 
+     * 1、处理summary请求
      * @param bucket
      * @param request
      * @param response
      * @return
      */
-    @RequestMapping(value = "/stats/summary/{" + AEConstants.BUCKET + "}", method = RequestMethod.GET)
+    @RequestMapping(value = "/stats/summary/{" + AnEnConstants.BUCKET + "}", method = RequestMethod.GET)
     @ResponseBody
-    public Object getSummary(@PathVariable(AEConstants.BUCKET) String bucket, HttpServletRequest request, HttpServletResponse response) {
-        String groupBy = request.getParameter(AEConstants.GROUP_BY);
-        if (StringUtils.isNotBlank(groupBy)) {
+    public Object getSummary(@PathVariable(AnEnConstants.BUCKET) String bucket,
+                             HttpServletRequest request, HttpServletResponse response) {
+        String groupBy = request.getParameter(AnEnConstants.GROUP_BY);
+        if (StringUtils.isNotBlank(groupBy)) {    //不是summary、不执行操作
             return Message.badRequest("bucket summary can't be group by");
         }
-        return this.doProcess(bucket, request);
+        return this.doProcess(bucket, request);   //执行操作
     }
 
+
     /**
-     * 处理group by请求
-     * 
+     * 2、处理group by请求
      * @param bucket
      * @param request
      * @param response
      * @return
      */
-    @RequestMapping(value = "/stats/groupBy/{" + AEConstants.BUCKET + "}", method = RequestMethod.GET)
+    @RequestMapping(value = "/stats/groupBy/{" + AnEnConstants.BUCKET + "}", method = RequestMethod.GET)
     @ResponseBody
-    public Object getGroupBy(@PathVariable(AEConstants.BUCKET) String bucket, HttpServletRequest request, HttpServletResponse response) {
-        String groupBy = request.getParameter(AEConstants.GROUP_BY);
+    public Object getGroupBy(@PathVariable(AnEnConstants.BUCKET) String bucket,
+                             HttpServletRequest request, HttpServletResponse response) {
+        String groupBy = request.getParameter(AnEnConstants.GROUP_BY);
         if (StringUtils.isBlank(groupBy)) {
             return Message.badRequest("bucket group by must be give group by parameter");
         }
@@ -74,7 +77,6 @@ public class AEController extends AEBaseController {
 
     /**
      * 具体的处理方法
-     * 
      * @param bucket
      * @param request
      * @return
@@ -87,11 +89,11 @@ public class AEController extends AEBaseController {
         }
 
         // 处理metric，判断对应的bucket中是否有对应的metric存在
-        String metric = request.getParameter(AEConstants.METRIC);
+        String metric = request.getParameter(AnEnConstants.METRIC);
         if (StringUtils.isBlank(metric)) {
             return Message.badRequest("metric can't set to empty");
         }
-        String[] metrics = StringUtils.split(metric, AEConstants.SEPARTION_COMMA);
+        String[] metrics = StringUtils.split(metric, AnEnConstants.SEPARTION_COMMA);
         Set<Object> bucketMetricValues = this.bucketMetrics.get(bucket);
         for (String metricItem : metrics) {
             if (!SetUtil.contains(bucketMetricValues, metricItem)) {
@@ -100,11 +102,11 @@ public class AEController extends AEBaseController {
         }
 
         // 处理group by条件
-        String groupBy = request.getParameter(AEConstants.GROUP_BY);
+        String groupBy = request.getParameter(AnEnConstants.GROUP_BY);
         Set<String> groups = new HashSet<String>(); // 最终解析存储
         if (StringUtils.isNotBlank(groupBy)) {
             Set<Object> groupByMetrics = this.groupByColumns.get(bucket);
-            String[] attr = StringUtils.split(groupBy, AEConstants.SEPARTION_COMMA);
+            String[] attr = StringUtils.split(groupBy, AnEnConstants.SEPARTION_COMMA);
             for (String str : attr) {
                 if (!SetUtil.contains(groupByMetrics, str)) {
                     return Message.badRequest("Bucket " + bucket + " can't group by " + str);
@@ -114,10 +116,10 @@ public class AEController extends AEBaseController {
         }
 
         // 处理日期
-        String startDate = request.getParameter(AEConstants.START_DATE);
-        String endDate = request.getParameter(AEConstants.END_DATE);
+        String startDate = request.getParameter(AnEnConstants.START_DATE);
+        String endDate = request.getParameter(AnEnConstants.END_DATE);
         if (StringUtils.isBlank(startDate) || StringUtils.isBlank(endDate)) {
-            String date = request.getParameter(AEConstants.DATE);
+            String date = request.getParameter(AnEnConstants.DATE);
             if (StringUtils.isBlank(date)) {
                 return Message.badRequest("Please give the date parameters");
             }
@@ -147,7 +149,7 @@ public class AEController extends AEBaseController {
         // 开始创建每个metric对应的QueryModel
         Map<String, QueryModel> queryModels = new HashMap<String, QueryModel>();
         for (String metricItem : metrics) {
-            String key = bucket + AEConstants.DELIMITER + metricItem;
+            String key = bucket + AnEnConstants.DELIMITER + metricItem;
             String queryId = this.bucketMetricQueryId.get(key);
             QueryModel model = queryModels.get(queryId);
             if (model == null) {
@@ -180,10 +182,10 @@ public class AEController extends AEBaseController {
             QueryModel model = queryModels.get(queryId);
             List<Map<String, Object>> dataItem = null;
 
-            AEService extendedService = null;
+            AnEnService extendedService = null;
             if (ApplicationContextUtil.getApplicationContext().containsBean(queryId)) {
                 // 如果存在，表示给定的是一个特定的bean
-                extendedService = (AEService) ApplicationContextUtil.getApplicationContext().getBean(queryId);
+                extendedService = (AnEnService) ApplicationContextUtil.getApplicationContext().getBean(queryId);
             } else {
                 extendedService = this.aeService;
             }
