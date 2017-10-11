@@ -21,44 +21,44 @@
         http://www.springframework.org/schema/util/spring-util-3.0.xsd
         ">
 
-    <!-- bucket metric 参数 -->
-    <util:map id="bucketMetricColumns">
-    </util:map>
-    <!-- bucket metric 返回value参数 结束 -->
+    <!--&lt;!&ndash; bucket metric 参数 &ndash;&gt;-->
+    <!--<util:map id="bucketMetricColumns">-->
+    <!--</util:map>-->
+    <!--&lt;!&ndash; bucket metric 返回value参数 结束 &ndash;&gt;-->
 
-    <!-- bucket metric query id 参数 -->
-    <util:map id="bucketMetricQueryId">
-    </util:map>
-    <!-- bucket metric query id 参数结束 -->
+    <!--&lt;!&ndash; bucket metric query id 参数 &ndash;&gt;-->
+    <!--<util:map id="bucketMetricQueryId">-->
+    <!--</util:map>-->
+    <!--&lt;!&ndash; bucket metric query id 参数结束 &ndash;&gt;-->
 
-    <!-- bucket metric 参数 -->
-    <util:map id="bucketMetrics">
-    </util:map>
-    <!-- bucket metric 参数结束-->
+    <!--&lt;!&ndash; bucket metric 参数 &ndash;&gt;-->
+    <!--<util:map id="bucketMetrics">-->
+    <!--</util:map>-->
+    <!--&lt;!&ndash; bucket metric 参数结束&ndash;&gt;-->
 
-    <!-- bucket group 参数-->
-    <util:map id="groupByColumns">
-    </util:map>
-    <!-- bucket group 参数-->
+    <!--&lt;!&ndash; bucket group 参数&ndash;&gt;-->
+    <!--<util:map id="groupByColumns">-->
+    <!--</util:map>-->
+    <!--&lt;!&ndash; bucket group 参数&ndash;&gt;-->
 
-    <util:map id="dimensionTableMapping">
-        <entry key="date" value="dimension_date"/>
-        <entry key="browser" value="dimension_browser"/>
-        <entry key="browser_name" value="dimension_browser"/>
-        <entry key="platform" value="dimension_platform"/>
-        <entry key="location" value="dimension_location"></entry>
-        <entry key="location_country" value="dimension_location"></entry>
-        <entry key="location_province" value="dimension_location"></entry>
-        <entry key="location_city" value="dimension_location"></entry>
-        <entry key="inbound" value="dimension_inbound"></entry>
-    </util:map>
+    <!--<util:map id="dimensionTableMapping">-->
+        <!--<entry key="date" value="dimension_date"/>-->
+        <!--<entry key="browser" value="dimension_browser"/>-->
+        <!--<entry key="browser_name" value="dimension_browser"/>-->
+        <!--<entry key="platform" value="dimension_platform"/>-->
+        <!--<entry key="location" value="dimension_location"></entry>-->
+        <!--<entry key="location_country" value="dimension_location"></entry>-->
+        <!--<entry key="location_province" value="dimension_location"></entry>-->
+        <!--<entry key="location_city" value="dimension_location"></entry>-->
+        <!--<entry key="inbound" value="dimension_inbound"></entry>-->
+    <!--</util:map>-->
 
-    <util:map id="dimensionColumns">
-        <entry key="platform" value="id,`platform_name`"/>
-        <entry key="browser_name" value="distinct `browser_name`"/>
-        <entry key="location_country" value="distinct `country`"/>
-        <entry key="location_province" value="distinct `country`, `province`"/>
-        <entry key="location_city" value="distinct `country`, `province`, `city`"/>
-        <entry key="inbound" value="`id`, `name`"/>
-    </util:map>
+    <!--<util:map id="dimensionColumns">-->
+        <!--<entry key="platform" value="id,`platform_name`"/>-->
+        <!--<entry key="browser_name" value="distinct `browser_name`"/>-->
+        <!--<entry key="location_country" value="distinct `country`"/>-->
+        <!--<entry key="location_province" value="distinct `country`, `province`"/>-->
+        <!--<entry key="location_city" value="distinct `country`, `province`, `city`"/>-->
+        <!--<entry key="inbound" value="`id`, `name`"/>-->
+    <!--</util:map>-->
 </beans>
