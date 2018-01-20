@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 import java.util.Set;
 
-;
 
 
  /**
@@ -31,6 +30,7 @@ import java.util.Set;
 public abstract class AnEnBaseController {
 
     private static final Logger log = Logger.getLogger(AnEnBaseController.class);
+
 
 
     // bucket和metric的映射关系

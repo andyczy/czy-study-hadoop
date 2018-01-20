@@ -26,7 +26,7 @@
       <module name="hbase" target="1.8" />
       <module name="hive" target="1.8" />
       <module name="project-api" target="1.8" />
-      <module name="project-dataapi" target="1.5" />
+      <module name="project-dataapi" target="1.8" />
       <module name="project-etl" target="1.8" />
       <module name="project-sdk" target="1.8" />
       <module name="project-track" target="1.8" />
